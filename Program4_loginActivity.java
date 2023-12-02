@@ -30,12 +30,12 @@ public class loginActivity extends AppCompatActivity {
                     Intent intent= new Intent(loginActivity.this, welcomeActivity.class);
                     startActivity(intent);
                 }
-                else {
+                else if(counter>0) {
+                    counter--;
                     Toast.makeText(loginActivity.this,"Invalid Credentials",Toast.LENGTH_SHORT).show();
                 }
-                counter--;
-                if(counter==0){
-                    Toast.makeText(getBaseContext(),"failed to login attempts",Toast.LENGTH_SHORT).show();
+                else{
+                    Toast.makeText(loginActivity.this,"failed to login attempts",Toast.LENGTH_SHORT).show();
                             login_btn.setEnabled(false);
                 }
             }
